@@ -18,6 +18,34 @@ The hybrid GCN-LSTM architecture combines graph-based spatial learning with temp
 
 ---
 
+## Live Deployment
+
+### Production API
+
+**Live API URL**
+
+https://gnn-climate-forecast.onrender.com
+
+### Interactive API Documentation
+
+**Swagger UI**
+
+https://gnn-climate-forecast.onrender.com/docs
+
+**ReDoc Documentation**
+
+https://gnn-climate-forecast.onrender.com/redoc
+
+### Available Endpoints
+
+| Method | Endpoint | Description         |
+| ------ | -------- | ------------------- |
+| GET    | /        | Project Information |
+| GET    | /health  | Health Check        |
+| POST   | /predict | Climate Prediction  |
+
+---
+
 ## Business and Social Impact
 
 Accurate climate forecasting has significant real-world applications:
@@ -129,7 +157,7 @@ By jointly learning spatial and temporal information, GCN-LSTM significantly imp
 
 ## Visualizations
 
-The project generates multiple evaluation visualizations:
+The project generates multiple evaluation visualizations.
 
 ### Sensor Network Graph
 
@@ -147,8 +175,6 @@ Performance comparison across all forecasting models.
 
 ## Deployment Architecture
 
-The forecasting system is designed for production deployment.
-
 ### FastAPI
 
 REST API endpoints:
@@ -161,20 +187,38 @@ REST API endpoints:
 
 Containerized deployment for reproducibility and portability.
 
-### Cloud Deployment
+### Render Cloud Deployment
 
-The project architecture is compatible with cloud platforms such as AWS EC2, ECS, and Elastic Beanstalk for scalable deployment.
+The forecasting API is deployed on Render and publicly accessible through a production endpoint.
+
+Features:
+
+* Public REST API
+* Interactive Swagger Documentation
+* Health Monitoring Endpoint
+* Containerized Deployment
+* Continuous Deployment via GitHub
 
 ---
+
+## Example API Request
+
+```json
+{
+  "temperature": 45,
+  "humidity": 79,
+  "rainfall": 25
+}
+```
 
 ## Example API Response
 
 ```json
 {
-  "temperature": 32.5,
-  "humidity": 68.2,
-  "rainfall": 12.4,
-  "timestamp": "2026-06-08T14:30:00"
+  "temperature": 45,
+  "humidity": 79,
+  "rainfall": 25,
+  "predicted_value": 51.2
 }
 ```
 
@@ -185,14 +229,16 @@ The project architecture is compatible with cloud platforms such as AWS EC2, ECS
 ```text
 gnn-climate-forecast/
 
-├── data/
-├── src/
-├── deployment/
 ├── configs/
-├── notebooks/
+├── data/
+│   └── raw/
+├── deployment/
+│   ├── app.py
+│   └── Dockerfile
 ├── results/
-├── docs/
+├── src/
 ├── tests/
+├── .gitignore
 ├── README.md
 └── requirements.txt
 ```
@@ -207,6 +253,7 @@ The project includes validation and testing components for:
 * Graph construction
 * Model execution
 * Training pipeline verification
+* API endpoint testing
 
 ---
 
@@ -214,26 +261,50 @@ The project includes validation and testing components for:
 
 Potential future enhancements include:
 
-* Transformer-based climate forecasting models
-* Satellite imagery integration
+* Transformer-based climate forecasting
 * Dynamic graph learning
 * Real-time streaming climate data
 * Explainable AI for climate decision support
 * Multi-region forecasting systems
+* Large-scale environmental intelligence systems
+
+---
+
+## Technical Skills Demonstrated
+
+* Python
+* FastAPI
+* Graph Neural Networks (GCN, GAT)
+* Deep Learning
+* LSTM Networks
+* PyTorch
+* Docker
+* REST API Development
+* Machine Learning Evaluation
+* Data Visualization
+* Git & GitHub
+* Cloud Deployment (Render)
 
 ---
 
 ## Resume Highlights
 
-* Developed a hybrid GCN-LSTM model for climate forecasting, significantly outperforming traditional forecasting baselines.
+* Developed a hybrid GCN-LSTM model for climate forecasting, outperforming traditional forecasting baselines.
 * Implemented Graph Neural Network architectures including GCN and GAT for spatial-temporal climate modeling.
-* Built an end-to-end forecasting pipeline covering data processing, graph construction, model training, evaluation, and API deployment.
-* Designed a production-ready architecture using FastAPI and Docker for scalable climate prediction services.
+* Built an end-to-end forecasting pipeline covering data preprocessing, graph construction, model training, evaluation, and deployment.
+* Designed and deployed a production-ready FastAPI service with interactive API documentation.
+* Containerized the application using Docker and deployed it on Render Cloud for public access.
 
 ---
 
 ## Author
 
-Sakshi Mavani
+**Sakshi Mavani**
 
-Data Science and Machine Learning Enthusiast
+Data Science & Machine Learning Enthusiast
+
+GitHub:
+https://github.com/sakshi-mavani
+
+Project Repository:
+https://github.com/sakshi-mavani/gnn-climate-forecast
