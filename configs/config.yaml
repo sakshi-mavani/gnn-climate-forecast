@@ -1,0 +1,28 @@
+data:
+  raw_path: "data/raw/climate_data.csv"
+  processed_path: "data/processed/climate_processed.csv"
+
+  features:
+    - temperature
+    - humidity
+    - pressure
+
+  target: temperature
+
+model:
+  knn_k: 3
+
+  in_dim: 3
+  gcn_hidden: 32
+  lstm_hidden: 64
+  out_dim: 1
+
+training:
+  batch_size: 32
+  epochs: 20
+  lr: 0.001
+
+evaluation:
+  metrics:
+    - rmse
+    - mae
